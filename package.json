@@ -2,7 +2,7 @@
   "name": "tektensor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pradhyumna-coding.github.io/tektensor",
+  "homepage": "https://pradhyumna-coding.github.io",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
