@@ -1,0 +1,26 @@
+.timeline-container{
+    display: grid;
+    width: 100vw;
+    position: relative;
+    grid-template-columns: 0.9fr 1.1fr;
+    height:fit-content;
+}
+@media screen and (max-width: 750px) {
+    .timeline-container{grid-template-columns: 0.2fr 0.8fr;}
+}
+
+.time-circle{
+    width: 30px;
+}
+
+.sticky-div{
+    display: inline-flex;
+    position: sticky;
+    top: 100px;
+    height: 100%;
+    max-height: 50vh;
+    min-height: 30vh;
+}
+.sticky-div p{
+    margin-left: 5px;;
+}

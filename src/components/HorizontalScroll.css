@@ -1,0 +1,22 @@
+.horizontal-scroll-section {
+    position: relative;
+    height: 400vh;
+}
+
+.horizontal-scroll-view {
+    position: sticky;
+    top:10px;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.horizontal-scroll-container {
+    display: flex;
+    flex-direction: row;
+    height:max-content;
+    justify-self: center;
+    padding: 5vh 2px 0px 2px;
+}

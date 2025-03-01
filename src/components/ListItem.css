@@ -1,0 +1,93 @@
+/*ListItem*/
+.card-heading-div{
+    display: inline-flex;
+    align-items: center;
+}
+.card-heading-div img{
+    padding-right: 10px;
+}
+
+.card-icon{
+    width: 60px;
+}
+.card-heading{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    white-space: pre-wrap;
+}
+.card-heading .material-symbols-outlined{
+    padding-right: 5px;
+    font-size: 110%;
+}
+
+.card-text{
+    color: rgb(207, 207, 207);
+    font-size: 20px;
+    white-space: pre-wrap;
+    padding : 5px;
+}
+.card{
+    width: 100%;
+    height: fit-content;
+}
+.card.blog{
+    padding: 5px;
+}
+.blog-text-div{
+    background-color: rgba(151, 151, 151,10);
+    position: relative;
+    
+}
+.blog-author{
+    color: white;
+    font-size: 23px;
+}
+.blog-date{
+    color: rgb(207, 207, 207);
+    font-size: 18px;
+}
+
+
+.card.detailed{
+    min-width: 400px;
+    max-width: 600px;
+    max-height: 700px;
+    padding: 5px;
+    height: fit-content;
+    align-self: center;
+}
+.card-image{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+
+/*Chip*/
+.chip{
+    display: inline-flex; /* Use inline-flex for horizontal layout */
+    align-items: center;    /* Vertically center items */
+    padding: 5px 10px;     /* Adjust padding as needed */
+    border-radius: 9999px; /* Large value for rounded corners */
+    /* color will be set via style prop*/
+    white-space: nowrap;
+    font-size:20px ;
+    margin: 5px 5px 5px 0px;
+}
+.chip .material-symbols-outlined{
+    padding-right: 5px;
+}
+/*Read More*/
+.read-more{
+    display: inline-flex; /* Use inline-flex for horizontal layout */
+    align-items: center;    /* Vertically center items */
+    /* color will be set via style prop*/
+    padding: 5px 10px; 
+    white-space: nowrap;
+    font-size:22px ;
+}
+.read-more .material-symbols-outlined{
+    padding-left: 2px;
+}
