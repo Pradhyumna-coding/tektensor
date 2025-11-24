@@ -1,93 +1,115 @@
 /*ListItem*/
-.card-heading-div{
+.card-heading-div {
     display: inline-flex;
     align-items: center;
 }
-.card-heading-div img{
+
+.card-heading-div img {
     padding-right: 10px;
 }
 
-.card-icon{
+.card-icon {
     width: 60px;
 }
-.card-heading{
+
+.card-heading {
     color: white;
     font-size: 30px;
     font-weight: bold;
     white-space: pre-wrap;
 }
-.card-heading .material-symbols-outlined{
+
+.card-heading .material-symbols-outlined {
     padding-right: 5px;
     font-size: 110%;
 }
 
-.card-text{
+.card-text {
     color: rgb(207, 207, 207);
     font-size: 20px;
     white-space: pre-wrap;
-    padding : 5px;
+    padding: 5px;
 }
-.card{
+
+.card {
     width: 100%;
     height: fit-content;
 }
-.card.blog{
+
+.card.blog {
     padding: 5px;
 }
-.blog-text-div{
-    background-color: rgba(151, 151, 151,10);
+
+.blog-text-div {
+    background-color: rgba(151, 151, 151, 10);
     position: relative;
-    
 }
-.blog-author{
+
+.blog-author {
     color: white;
     font-size: 23px;
 }
-.blog-date{
+
+.blog-date {
     color: rgb(207, 207, 207);
     font-size: 18px;
 }
 
-
-.card.detailed{
+.card.detailed {
     min-width: 400px;
-    max-width: 600px;
+    /* max-width: 600px;  Removed max-width to fill container */
     max-height: 700px;
     padding: 5px;
-    height: fit-content;
-    align-self: center;
+    height: 100%;
+    min-height: 350px;
+    /* align-self: center; Removed align-self */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* Ensure it takes full width */
 }
-.card-image{
+
+.card-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
     max-width: 500px;
+    align-self: center;
+    /* Center the image within the flex container */
 }
-
 
 /*Chip*/
-.chip{
-    display: inline-flex; /* Use inline-flex for horizontal layout */
-    align-items: center;    /* Vertically center items */
-    padding: 5px 10px;     /* Adjust padding as needed */
-    border-radius: 9999px; /* Large value for rounded corners */
+.chip {
+    display: inline-flex;
+    /* Use inline-flex for horizontal layout */
+    align-items: center;
+    /* Vertically center items */
+    padding: 5px 10px;
+    /* Adjust padding as needed */
+    border-radius: 9999px;
+    /* Large value for rounded corners */
     /* color will be set via style prop*/
     white-space: nowrap;
-    font-size:20px ;
+    font-size: 20px;
     margin: 5px 5px 5px 0px;
 }
-.chip .material-symbols-outlined{
+
+.chip .material-symbols-outlined {
     padding-right: 5px;
 }
+
 /*Read More*/
-.read-more{
-    display: inline-flex; /* Use inline-flex for horizontal layout */
-    align-items: center;    /* Vertically center items */
+.read-more {
+    display: inline-flex;
+    /* Use inline-flex for horizontal layout */
+    align-items: center;
+    /* Vertically center items */
     /* color will be set via style prop*/
-    padding: 5px 10px; 
+    padding: 5px 10px;
     white-space: nowrap;
-    font-size:22px ;
+    font-size: 22px;
 }
-.read-more .material-symbols-outlined{
+
+.read-more .material-symbols-outlined {
     padding-left: 2px;
 }

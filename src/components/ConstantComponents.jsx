@@ -39,7 +39,10 @@ export const Navbar = () => {
                         <Link to='/' className='nav-links' onClick={handleClick}>Home</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to='/blog' className='nav-links' onClick={handleClick}>Blog</Link>
+                        <a href="https://github.com/Pradhyumna-coding" target="_blank" className='nav-links' onClick={handleClick}>Github</a>
+                    </li>
+                    <li className='nav-item'>
+                        <a href="https://www.youtube.com/@codingExplorerPradhyumna" target="_blank" className='nav-links' onClick={handleClick}>Youtube</a>
                     </li>
 
                 </ul>

@@ -1,26 +1,78 @@
-.timeline-container{
+.timeline-container {
     display: grid;
-    width: 100vw;
+    width: 100%;
     position: relative;
     grid-template-columns: 0.9fr 1.1fr;
-    height:fit-content;
-}
-@media screen and (max-width: 750px) {
-    .timeline-container{grid-template-columns: 0.2fr 0.8fr;}
+    height: fit-content;
+    margin-bottom: 20px;
 }
 
-.time-circle{
-    width: 30px;
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.sticky-div{
+.neon-glow {
+    filter: drop-shadow(0 0 2px #6f00ff) drop-shadow(0 0 4px #6f00ff);
+}
+
+.time-circle {
+    width: 25px;
+    overflow: visible;
+}
+
+.sticky-div {
     display: inline-flex;
     position: sticky;
     top: 100px;
     height: 100%;
     max-height: 50vh;
     min-height: 30vh;
+    align-items: flex-start;
 }
-.sticky-div p{
-    margin-left: 5px;;
+
+.sticky-div p {
+    margin-left: 5px;
+}
+
+@media screen and (max-width: 750px) {
+    .timeline-container {
+        grid-template-columns: 90px 1fr;
+        /* Adjusted width for mobile */
+        gap: 5px;
+    }
+
+    .sticky-div {
+        flex-direction: row;
+        /* Keep row to avoid SVG pushing text down */
+        align-items: flex-start;
+        /* Align text to top */
+        width: 100%;
+    }
+
+    .sticky-div .section-subheading {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 25px !important;
+        /* Visible font size */
+        margin-left: 5px !important;
+        margin-top: 5px;
+        /* Align with circle center roughly */
+        text-align: left;
+    }
+
+    .time-circle {
+        width: 20px;
+        /* Slightly smaller on mobile */
+    }
+
+    .glass-card {
+        padding: 10px;
+        padding-left: 20px;
+    }
 }

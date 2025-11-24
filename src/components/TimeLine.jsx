@@ -1,5 +1,5 @@
-import React, { useState ,useRef, useEffect} from "react";
-import { motion,useScroll, useTransform } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import './TimeLine.css';
 
 
@@ -21,24 +21,25 @@ import './TimeLine.css';
                     </svg>
  */
 
-export default function TimeLineSingle({children, header}) {
+export default function TimeLineSingle({ children, header }) {
     const ref = useRef(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start 20%", "end 20%"],
+        offset: ["start 70%", "end 30%"],
     });
 
-    const [color, setColor] = useState("url(#circlelinearGradient)");
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
-    if (scrollYProgress > 0.01) {
-        setColor("url(#circlelinearGradient)");
-    } else {
-        setColor("grey");
-    }
+        const unsubscribe = scrollYProgress.on("change", (latest) => {
+            if (latest > 0) {
+                setIsActive(true);
+            } else {
+                setIsActive(false);
+            }
+        });
+        return () => unsubscribe();
     }, [scrollYProgress]);
-
-
 
 
     return (
@@ -49,21 +50,26 @@ export default function TimeLineSingle({children, header}) {
                         <stop offset="30%" stopColor="#6f00ff" />
                         <stop offset="75%" stopColor="#ff00d4" />
                     </linearGradient>
-                    <motion.circle cx="1.5" cy="2.5" r="1.5" 
-                        style={{fill:"url(#circlelinearGradient)"}} />
-                    <motion.path 
+                    <motion.circle cx="1.5" cy="2.5" r="1.5"
+                        fill={isActive ? "url(#circlelinearGradient)" : "grey"}
+                        animate={{ scale: isActive ? 1.5 : 1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        className={isActive ? "neon-glow" : ""}
+                    />
+                    <motion.path
                         d="M 1.5,5 L 1.5,100"
                         fill="none"
                         stroke="#6f00ff"
                         strokeWidth="0.3"
-                        style={{pathLength: scrollYProgress}}
+                        style={{ pathLength: scrollYProgress }}
+                        className="neon-glow"
                     />
                 </svg>
 
                 <p className="section-subheading">{header}</p>
             </div>
 
-            <div>
+            <div className="glass-card">
                 {children}
             </div>
         </div>

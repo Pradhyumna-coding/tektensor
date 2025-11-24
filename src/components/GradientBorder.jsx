@@ -16,7 +16,7 @@ const MouseToCenterTheta = ({ mouseX, mouseY, containerWidth, containerHeight })
   }
 };
 
-const GradientBorderDiv = ({ children, radius, colors = ['#6f00ff', '#ff00d4', 'black'], percentages = [2, 3, 6] }) => {
+const GradientBorderDiv = ({ children, radius, colors = ['#6f00ff', '#ff00d4', 'black'], percentages = [2, 3, 6], style, className }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
   const [containerDimensions, setContainerDimensions] = useState({ width: 0, height: 0, left: 0, top: 0 }); // Store left and top
@@ -58,15 +58,15 @@ const GradientBorderDiv = ({ children, radius, colors = ['#6f00ff', '#ff00d4', '
     containerWidth: containerDimensions.width,
     containerHeight: containerDimensions.height,
   });
-    // Build the linear-gradient string dynamically
-    let gradientString = `linear-gradient(${(theta+Math.PI/2)*-1}rad, `;
-    for (let i = 0; i < colors.length; i++) {
-        gradientString += `${colors[i]} ${percentages[i]}%`;
-        if (i < colors.length - 1) {
-            gradientString += ', ';
-        }
+  // Build the linear-gradient string dynamically
+  let gradientString = `linear-gradient(${(theta + Math.PI / 2) * -1}rad, `;
+  for (let i = 0; i < colors.length; i++) {
+    gradientString += `${colors[i]} ${percentages[i]}%`;
+    if (i < colors.length - 1) {
+      gradientString += ', ';
     }
-    gradientString += ')';
+  }
+  gradientString += ')';
 
   return (
     <div
@@ -75,10 +75,11 @@ const GradientBorderDiv = ({ children, radius, colors = ['#6f00ff', '#ff00d4', '
         backgroundImage: gradientString,
         borderRadius: `${radius}px`,
         padding: '2px', // Padding for the border itself
+        ...style
       }}
-      className="border-div"
+      className={`border-div ${className || ''}`}
     >
-      <div className="full-div" style={{ borderRadius: `${radius}px`, backgroundColor: 'black',padding:`${radius}px` }}>
+      <div className="full-div" style={{ borderRadius: `${radius}px`, backgroundColor: 'black', padding: `${radius}px` }}>
         {children}
       </div>
     </div>
